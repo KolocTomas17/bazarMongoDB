@@ -1,0 +1,51 @@
+
+
+.car-update-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+  }
+
+  .tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  
+  .car-update-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .car-update-form label {
+    margin-bottom: 10px;
+  }
+  
+  .car-update-form input[type="text"],
+  .car-update-form input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: rgb(62, 62, 62);
+  }
+  
+  .car-update-form button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    /* cursor: pointer; */
+    font-size: 1rem;
+  }
+  
+  .car-update-form button:hover {
+    background-color: #c1ffc4;
+  }

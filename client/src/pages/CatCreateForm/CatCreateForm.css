@@ -1,0 +1,42 @@
+.cat-create-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.input {
+  margin: 5px;
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .5rem;
+}
+
+.form-controls * {
+  margin-inline: .5rem;
+}
+
+.button {
+  background-color: rgb(206, 206, 206);
+  border-radius: 10px;
+  border: 1px solid black;
+  color: black;
+  margin: 5px;
+}
+
+.button:hover {
+  background-color: rgb(156, 156, 156);
+}
