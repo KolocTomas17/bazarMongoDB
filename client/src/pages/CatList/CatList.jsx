@@ -6,9 +6,11 @@ import "./CatList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+
 export default function CatList() {
   const [cats, setCats] = useState();
   const [loaded, setLoaded] = useState(false);
+  const [cart, setCart] = useState([]);
 
   const load = async () => {
     const data = await getAllCats();
@@ -38,6 +40,28 @@ export default function CatList() {
     );
   }
 
+  const handleAddToCart = (catId) => {
+    setCart((prevCart) => [...prevCart, catId]);
+  };
+
+  const handleRemoveFromCart = (catId) => {
+    setCart((prevCart) => {
+      const newCart = [...prevCart];
+      const index = newCart.indexOf(catId);
+      if (index !== -1) {
+        newCart.splice(index, 1);
+      }
+      return newCart;
+    });
+  };
+
+  const calculateTotalPrice = () => {
+    return cart.reduce((total, catId) => {
+      const cat = cats.find((cat) => cat._id === catId);
+      return total + (cat ? cat.price : 0);
+    }, 0);
+  };
+
   return (
     <>
       <div className="cat-title-container">
@@ -45,13 +69,38 @@ export default function CatList() {
       </div>
       <div className="CatListContainer is-flex-wrap-wrap ">
         {cats.map((cat, index) => (
-          <CatLink
-            className="cat-container"
-            key={index}
-            name={cat.name}
-            id={cat._id}
-          />
-        ))}
+         <div key={index} className="cat-container">
+         <CatLink name={cat.name} id={cat._id} price={cat.price} />
+         <button
+           className="button is-primary"
+           onClick={() => handleAddToCart(cat._id)}
+         >
+           
+           Přidat do košíku
+         </button>
+       </div>
+     ))}
+      </div>
+      <div className="cart-container">
+        <h2 className="title">Košík</h2>
+        <ul>
+          {cart.map((catId, index) => (
+            <li className="box" key={index}>
+              {cats.find((cat) => cat._id === catId).name}
+              <button
+                className="button is-danger"
+                onClick={() => handleRemoveFromCart(catId)}
+              >
+               
+                Odebrat
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div className="total-price title is-5">
+          <h3>Celková cena: {calculateTotalPrice()} Kč</h3>
+          <button className="button is-danger">zaplatit</button>
+        </div>
       </div>
       <Link to={"/"} className="catIcon">
         <FontAwesomeIcon icon={faArrowLeft} size="2x" color="black" />

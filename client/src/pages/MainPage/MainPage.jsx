@@ -11,7 +11,7 @@ import Select from "@mui/material/Select";
 export default function MainPage() {
   const [info, setInfo] = React.useState("");
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setInfo(event.target.value);
   };
 
   return (

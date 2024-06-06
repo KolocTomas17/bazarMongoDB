@@ -70,6 +70,7 @@ export default function CatView() {
         <p>Jméno: {cat.name}</p>
         <p>Počet nohou: {cat.legs}</p>
         <p>Barva: {cat.color}</p>
+        <p>Cena: {cat.price}</p>
         <form>
             <p>
                 Napište jméno kočky pro smazání kočky

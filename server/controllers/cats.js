@@ -79,6 +79,7 @@ If the cat is found and deleted, it returns a HTTP status code of 200 with a mes
         name: req.body.name,
         legs: req.body.legs,
         color: req.body.color,
+        price: req.body.price,
       });
 
       const result = await Cat.findByIdAndUpdate(req.params.id, data);
@@ -111,6 +112,7 @@ If the cat is found and deleted, it returns a HTTP status code of 200 with a mes
         name: req.body.name,
         legs: req.body.legs,
         color: req.body.color,
+        price: req.body.price,
       });
       //await - dokavad se to neprovede
       const result = await data.save();

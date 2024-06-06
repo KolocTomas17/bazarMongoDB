@@ -47,6 +47,7 @@ export default function CatCreateForm() {
                         <input className="input is-rounded" type="text" required name="name" placeholder="Zadejte jméno" onChange={e => handleChange(e)} />
                         <input className="input is-rounded" type="number" required name="legs" placeholder="Zadejte počet nohou" onChange={e => handleChange(e)} />
                         <input className="input is-rounded" type="text" required name="color" placeholder="Zadejte barvu" onChange={e => handleChange(e)} />
+                        <input className="input is-rounded" type="number" required name="price" placeholder="Zadejte cenu" onChange={e => handleChange(e)} />
                         <div className="form-controls">
 
                             <Link to={"/"}>

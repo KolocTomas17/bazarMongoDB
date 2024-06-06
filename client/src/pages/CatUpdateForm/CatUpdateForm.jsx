@@ -72,6 +72,7 @@ export default function CatUpdateForm() {
                 <input className="input is-rounded" type="text" required name="name" placeholder="Zadejte jméno" defaultValue={cat.name} onChange={(e) => handleChange(e)} />
                 <input className="input is-rounded" type="number" required name="legs" placeholder="Zadejte počet nohou" defaultValue={cat.legs} onChange={(e) => handleChange(e)} />
                 <input className="input is-rounded" type="text" required name="color" placeholder="Zadejte barvu" defaultValue={cat.color} onChange={(e) => handleChange(e)} />
+                <input className="input is-rounded" type="number" required name="price" placeholder="Zadejte cenu" defaultValue={cat.price} onChange={(e) => handleChange(e)} />
                 <button className="button is-light" onClick={handlePost}>
                     Aktualizovat formulář
                 </button>
