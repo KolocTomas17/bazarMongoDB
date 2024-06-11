@@ -4,4 +4,4 @@
 4. cd client
 5. npm i npm run dev -- --open
 
--- u can add only small images like 25kb
+-- u can only add small images like 25kb
