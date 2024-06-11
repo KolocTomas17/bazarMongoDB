@@ -1,51 +1,51 @@
 
 
 .cat-update-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  
+}
 
-  .tittle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  
-  .cat-update-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-  }
-  
-  .cat-update-form label {
-    margin-bottom: 10px;
-  }
-  
-  .cat-update-form input[type="text"],
-  .cat-update-form input[type="number"] {
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 500px;
-    border-radius: 5px;
-    background-color: rgb(62, 62, 62);
-  }
-  
-  .cat-update-form button {
-    padding: 10px 20px;
-    background-color: transparent;
-    color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    /* cursor: pointer; */
-    font-size: 1rem;
-  }
-  
-  .cat-update-form button:hover {
-    background-color: #c1ffc4;
-  }
+.tittle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+.cat-update-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.cat-update-form label {
+  margin-bottom: 10px;
+}
+
+.cat-update-form input[type="text"],
+.cat-update-form input[type="number"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 500px;
+  border-radius: 5px;
+  background-color: rgb(62, 62, 62);
+}
+
+.cat-update-form button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  /* cursor: pointer; */
+  font-size: 1rem;
+}
+
+.cat-update-form button:hover {
+  background-color: #c1ffc4;
+}

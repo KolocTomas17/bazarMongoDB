@@ -81,6 +81,7 @@ If the cat is found and deleted, it returns a HTTP status code of 200 with a mes
         type: req.body.type,
         hp: req.body.hp,
         price: req.body.price,
+        img: req.body.img,
         
       });
 
@@ -116,6 +117,7 @@ If the cat is found and deleted, it returns a HTTP status code of 200 with a mes
         type: req.body.type,
         hp: req.body.hp,
         price: req.body.price,
+        img: req.body.img,
       });
       //await - dokavad se to neprovede
       const result = await data.save();

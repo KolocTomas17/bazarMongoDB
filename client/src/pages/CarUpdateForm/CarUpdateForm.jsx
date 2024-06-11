@@ -45,6 +45,18 @@ export default function CarUpdateForm() {
         return navigate(`/car/${id}`);
     };
 
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          setFormData({ ...formData, img: reader.result });
+        };
+        reader.onerror = (error) => {
+          console.log("Error: ", error);
+        };
+      };
+
     useEffect(() => {
         load();
     }, []);
@@ -79,6 +91,7 @@ export default function CarUpdateForm() {
                 <input className="input is-rounded" type="text" required name="type" placeholder="Zadejte druh auta" defaultValue={car.type} onChange={(e) => handleChange(e)} />
                 <input className="input is-rounded" type="number" required name="hp" placeholder="Zadejte počet koní" defaultValue={car.hp} onChange={(e) => handleChange(e)} />
                 <input className="input is-rounded" type="number" required name="price" placeholder="Zadejte cenu" defaultValue={car.price} onChange={(e) => handleChange(e)} />
+                <input className="input is-rounded" type="file" required name="img" placeholder="Vyberte obrázek" accept="image/*" onChange={(e) => handleImageChange(e)} />
 
                 <Link to={"/"}>
                                 <FontAwesomeIcon size="2x" color="black" icon={faArrowLeft} />

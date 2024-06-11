@@ -1,0 +1,13 @@
+.content {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  max-width: fit-content;
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 15px;
+}
+

@@ -2,6 +2,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { updateCat, getCatById } from "../../models/Cat";
 import './CatUpdateForm.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function CatUpdateForm() {
     //useState - vytvoreni promenne v reactu
@@ -39,6 +42,19 @@ export default function CatUpdateForm() {
         e.preventDefault();
         postForm();
     };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          setFormData({ ...formData, img: reader.result });
+        };
+        reader.onerror = (error) => {
+          console.log("Error: ", error);
+        };
+      };
+
     const redirectToSuccessPage = (id) => {
         return navigate(`/cat/${id}`);
     };
@@ -65,23 +81,27 @@ export default function CatUpdateForm() {
 
     return (
         <>
-            <h1 className="tittle">Aktualizování formuláře pro kočku</h1>
-            <div className="cat-update-form">
-            <form>
+            <div className="container">
+                <div className="title-container">
+                    <h1 className="title is-1">Aktualizování formuláře pro kočku</h1>
+                </div>
+                <div className="cat-create-form">
+                <form>
 
                 <input className="input is-rounded" type="text" required name="name" placeholder="Zadejte jméno" defaultValue={cat.name} onChange={(e) => handleChange(e)} />
                 <input className="input is-rounded" type="number" required name="legs" placeholder="Zadejte počet nohou" defaultValue={cat.legs} onChange={(e) => handleChange(e)} />
                 <input className="input is-rounded" type="text" required name="color" placeholder="Zadejte barvu" defaultValue={cat.color} onChange={(e) => handleChange(e)} />
                 <input className="input is-rounded" type="number" required name="price" placeholder="Zadejte cenu" defaultValue={cat.price} onChange={(e) => handleChange(e)} />
+                <input className="input is-rounded" type="file" required name="img" placeholder="Vyberte obrázek" accept="image/*" onChange={(e) => handleImageChange(e)} />
+                <Link to={"/"}>
+                                <FontAwesomeIcon size="2x" color="black" icon={faArrowLeft} />
+                            </Link>
                 <button className="button is-light" onClick={handlePost}>
                     Aktualizovat formulář
                 </button>
             </form>
             <p>{info}</p>
-
-            <Link to={"/"}>
-                <p>Domů</p>
-            </Link>
+            </div>
             </div>
         </>
     )

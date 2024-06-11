@@ -7,6 +7,7 @@ const schema = mongoose.Schema({
     type: { type: String, require: true },
     hp: { type: Number, require: true },
     price: { type: Number, require: true },
+    img: { type: String, required: true },
 });
 
 module.exports = mongoose.model("Car", schema);

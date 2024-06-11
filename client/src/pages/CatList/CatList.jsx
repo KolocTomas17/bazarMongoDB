@@ -70,6 +70,7 @@ export default function CatList() {
       <div className="CatListContainer is-flex-wrap-wrap ">
         {cats.map((cat, index) => (
          <div key={index} className="cat-container">
+            <img className="cat-img" src={cat.img} alt="Cat" />
          <CatLink name={cat.name} id={cat._id} price={cat.price} />
          <button
            className="button is-primary"
@@ -85,17 +86,22 @@ export default function CatList() {
         <h2 className="title">Košík</h2>
         <ul>
           {cart.map((catId, index) => (
-            <li className="box" key={index}>
+            <li className="box boxik" key={index}>
               {cats.find((cat) => cat._id === catId).name}
+              <img className="small-cat" src={cats.find((cat) => cat._id === catId).img} alt="cat" />
+              <div className="btn">
               <button
-                className="button is-danger"
+                className="button is-danger btn"
                 onClick={() => handleRemoveFromCart(catId)}
               >
                
                 Odebrat
               </button>
+              </div>
+             <catId className="price">{cats.find((cat) => cat._id === catId).price}Kč</catId>
             </li>
           ))}
+          
         </ul>
         <div className="total-price title is-5">
           <h3>Celková cena: {calculateTotalPrice()} Kč</h3>
